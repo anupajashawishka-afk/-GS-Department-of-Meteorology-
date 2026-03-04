@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS Department of Meteorology | Official Website</title>
+    <style>
+        :root {            --gov-blue: #003366;
+            --nav-bg: #e9ecef;
+            --accent-blue: #0056b3;
+            --text-dark: #212529;
+            --sky-gradient: linear-gradient(180deg, #87CEEB 0%, #ffffff 100%);
+        }
+
+        /* Security: Disable Text Selection */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: var(--sky-gradient);
+            background-attachment: fixed;
+            color: var(--text-dark);            line-height: 1.5;
+        }
+
+        /* Layout Container */
+        .wrapper {            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        /* Header */
+        header {
+            background: var(--gov-blue);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid #ffcc00;
+        }
+        .header-logo { width: 80px; margin-right: 20px; }
+        .header-title h1 { font-size: 1.8rem; letter-spacing: 1px; }
+
+        /* Navigation */
+        nav {
+            background: var(--nav-bg);
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav a {            padding: 12px 15px;
+            text-decoration: none;
+            color: var(--gov-blue);
+            font-weight: bold;
+            font-size: 0.85rem;
+            border-right: 1px solid #ccc;
+            transition: 0.3s;
+        }
+        nav a:hover { background: var(--gov-blue); color: white; }
+
+        /* Main Content Grid */
+        .main-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Left Panel - Advisories */
+        .advisory-panel {
+            background: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        .advisory-item {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: white;            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .advisory-item img { width: 60px; height: 60px; margin-bottom: 5px; }
+        .advisory-item p { font-size: 0.8rem; font-weight: bold; color: #555; }
+        .status-none { color: green; font-size: 0.75rem; }
+
+        /* Right Panel - Forecast & Map */
+        .content-panel h2 {
+            background: var(--gov-blue);
+            color: white;
+            padding: 8px 15px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .forecast-box {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-size: 0.95rem;
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        .map-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .map-section img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        /* Audio Section */
+        .audio-container {
+            background: #f0f4f8;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        .audio-player {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .audio-player label { font-size: 0.85rem; font-weight: bold; width: 100px; }        /* GIF Gallery */
+        .gif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            padding: 20px;
+            background: #eee;
+        }
+        .gif-card { background: white; padding: 5px; border: 1px solid #ddd; }
+        .gif-card img { width: 100%; height: auto; }
+        .gif-card p { font-size: 0.75rem; text-align: center; padding: 5px; font-weight: bold; }
+
+        footer {
+            background: var(--gov-blue);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-container { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; }
+            .header-logo { margin: 0 0 10px 0; }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+<div class="wrapper">
+    <!-- Header -->
+    <header>
+        <img src="https://meteo.gov.lk/images/light.png" alt="Logo" class="header-logo">
+        <div class="header-title">
+            <h1>GS DEPARTMENT OF METEOROLOGY</h1>
+            <p style="font-size: 0.9rem; color: #ffcc00;">Government of GS - Official Meteorological Authority</p>
+        </div>
+    </header>
+
+    <!-- Nav Bar -->
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#">FORECAST</a>
+        <a href="#">MARINE WEATHER</a>
+        <a href="#">AVIATION</a>
+        <a href="#">WARNINGS</a>
+        <a href="#">RADAR/SAT</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">CONTACT</a>
+    </nav>
+
+    <div class="main-container">
+        <!-- Left Column: Advisories -->
+        <aside class="advisory-panel">            <h3 style="font-size: 1rem; margin-bottom: 15px; border-bottom: 2px solid var(--gov-blue);">Current Advisories</h3>
+            
+            <div class="advisory-item">
+                <img src="https://meteo.gov.lk/images/tsunami.png" alt="Tsunami">
+                <p>TSUNAMI</p>
+                <span class="status-none">No Advisory</span>
+            </div>
+
+            <div class="advisory-item">
+                <img src="https://meteo.gov.lk/images/land.png" alt="Landslide">
+                <p>LANDSLIDE</p>
+                <span class="status-none">No Advisory</span>
+            </div>
+
+            <div class="advisory-item">
+                <img src="https://meteo.gov.lk/images/light.png" alt="Lightning">
+                <p>LIGHTNING</p>
+                <span class="status-none">No Advisory</span>
+            </div>
+
+            <div class="advisory-item">
+                <img src="https://meteo.gov.lk/images/heat.png" alt="Heat Index">
+                <p>HEAT INDEX</p>
+                <span class="status-none">Normal</span>
+            </div>
+        </aside>
+
+        <!-- Right Column: Main Content -->
+        <section class="content-panel">
+            
+            <h2>Latest Weather Forecast</h2>
+            <div class="forecast-box">
+                <!-- Sinhala -->
+                <p><strong>සිංහල:</strong> 2026 පෙබරවාරි මස 26 දිනය සඳහා කාලගුණ අනාවැකිය ප.ව. 2.00 ට නිකුත්කරන ලදී. දකුණු පළාතෙත් රත්නපුර සහ මොනරාගල දිස්ත්‍රික්කවලත් පස්වරු 2.00 න් පසුව ස්ථාන ස්වල්පයක වැසි හෝ ගිගුරුම් සහිත වැසි ඇති විය හැක.</p>
+                <hr style="margin:10px 0; border:0; border-top:1px solid #eee;">
+                <!-- English -->
+                <p><strong>English:</strong> WEATHER FORECAST FOR 26 FEBRUARY 2026. Issued at 2.00 p.m. on 25 February 2026. Showers or thundershowers are likely at a few places in Southern province and in Rathnapura and Monaragala districts after 2.00 p.m.</p>
+                <hr style="margin:10px 0; border:0; border-top:1px solid #eee;">
+                <!-- Tamil -->
+                <p><strong>தமிழ்:</strong> 2026 பெப்ரவரி 26ஆம் திகதிக்கான பொதுவான வானிலை முன்னறிவிப்பு. தென் மாகாணத்திலும் இரத்தினபுரி மற்றும் மொனராகலை மாவட்டங்களிலும் சில இடங்களில் பி.ப. 2.00 மணிக்குப் பின்னர் மழையோ அல்லது இடியுடன் கூடிய மழையோ பெய்யக் கூடிய சாத்தியம் காணப்படுகின்றது.</p>
+            </div>
+
+            <h2>Forecast Audio (Voice)</h2>
+            <div class="audio-container">
+                <div class="audio-player">
+                    <label>Sinhala</label>                    <audio controls src="https://meteo.gov.lk/voices/forecast_voice_si.wav?v=1772016164"></audio>
+                </div>
+                <div class="audio-player">
+                    <label>English</label>
+                    <audio controls src="https://meteo.gov.lk/voices/forecast_voice_en.wav?v=1772016164"></audio>
+                </div>
+                <div class="audio-player">
+                    <label>Tamil</label>
+                    <audio controls src="https://meteo.gov.lk/voices/forecast_voice_ta.MP3?v=1772016164"></audio>                </div>
+            </div>
+
+            <div class="map-section">
+                <h2>Regional Weather Map</h2>
+                <img src="https://meteo.gov.lk/images/SLMap.jpg?v=1772016164" alt="Weather Map">
+            </div>
+        </section>
+    </div>
+
+    <!-- Graphical Analysis Section -->
+    <h2 style="margin-left:20px; font-size: 1.1rem; background: var(--gov-blue); color:white; display:inline-block; padding: 5px 15px;">Observation Graphics</h2>
+    <div class="gif-grid">        <div class="gif-card">
+            <img src="https://meteo.gov.lk/gifs/analysis1.gif?t=1772016642066" alt="Analysis 1">
+            <p>Surface Analysis 1</p>
+        </div>
+        <div class="gif-card">
+            <img src="https://meteo.gov.lk/gifs/analysis2.gif?t=1772016642079" alt="Analysis 2">
+            <p>Surface Analysis 2</p>
+        </div>
+        <div class="gif-card">
+            <img src="https://meteo.gov.lk/gifs/forecast1.gif?t=1772016679472" alt="Forecast 1">            <p>Rainfall Forecast</p>
+        </div>
+        <div class="gif-card">            <img src="https://meteo.gov.lk/gifs/marine1.gif?t=1772016709636" alt="Marine 1">
+            <p>Marine Wind Flow</p>
+        </div>
+        <div class="gif-card">
+            <img src="https://meteo.gov.lk/gifs/aviation2.gif?t=1772016739329" alt="Aviation">
+            <p>Aviation Hazards</p>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>GS DEPARTMENT OF METEOROLOGY</strong></p>
+        <p>Educational Purposes Only | Data Courtesy of MET GS Authority</p>
+        <p style="margin-top:10px; font-size: 0.7rem; opacity: 0.7;">&copy; 2026 GS Department of Meteorology. All Rights Reserved.</p>
+    </footer>
+</div>
+
+<!-- Security Script -->
+<script>
+    // 1. Disable Right Click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // 2. Disable Keyboard Shortcuts
+    document.onkeydown = function(e) {        // F12
+        if(e.keyCode == 123) return false;
+        // Ctrl+U (Source)
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+        // Ctrl+Shift+I (Inspect)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+        // Ctrl+S (Save)
+        if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false;    };
+
+    // 3. Prevent Dragging Images
+    document.querySelectorAll('img').forEach(img => {
+        img.onmousedown = () => false;
+    });
+</script>
+
+</body>
+</html>
